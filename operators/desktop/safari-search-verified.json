@@ -1,0 +1,12 @@
+{
+  "name": "safari-search-verified",
+  "steps": [
+    { "kind": "launch-app", "app": "Safari" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,l" },
+    { "kind": "type", "text": "https://www.google.com/search?q=clawcore" },
+    { "kind": "press", "key": "return" },
+    { "kind": "sleep", "seconds": 2 },
+    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-safari-search-see.png" }
+  ]
+}
