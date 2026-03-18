@@ -1,0 +1,10 @@
+{
+  "name": "finder-home-capture",
+  "steps": [
+    { "kind": "switch-app", "app": "Finder" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,shift,h" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "image", "mode": "screen", "path": "/tmp/clawcore-finder-home-screen.png" }
+  ]
+}

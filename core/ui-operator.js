@@ -7,6 +7,13 @@ function runPeekaboo(args, { dryRun = false } = {}) {
     return { ok: true, simulated: true, command: ['peekaboo', ...args].join(' ') };
   }
   try {
+    if (args[0] === 'image' && args[1] === '--mode' && args[2] === 'screen') {
+      const pathIndex = args.indexOf('--path');
+      const outPath = pathIndex >= 0 ? args[pathIndex + 1] : '/tmp/ui-operator-screen.png';
+      const captureBin = '/usr/sbin/screencapture';
+      execFileSync(captureBin, ['-x', outPath], { encoding: 'utf8' });
+      return { ok: true, simulated: false, command: [captureBin, '-x', outPath].join(' '), output: outPath };
+    }
     const out = execFileSync('peekaboo', args, { encoding: 'utf8' });
     return { ok: true, simulated: false, command: ['peekaboo', ...args].join(' '), output: out.trim() };
   } catch (error) {
