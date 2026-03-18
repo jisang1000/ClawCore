@@ -5,6 +5,6 @@
     { "kind": "sleep", "seconds": 1 },
     { "kind": "switch-app", "app": "Safari" },
     { "kind": "sleep", "seconds": 1 },
-    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-safari-start-page-see.png" }
+    { "kind": "image", "mode": "screen", "path": "/tmp/clawcore-safari-start-page-screen.png" }
   ]
 }
