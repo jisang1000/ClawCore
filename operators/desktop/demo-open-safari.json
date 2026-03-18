@@ -5,6 +5,6 @@
     { "kind": "sleep", "seconds": 1 },
     { "kind": "open-url", "app": "Safari", "url": "https://example.com" },
     { "kind": "sleep", "seconds": 2 },
-    { "kind": "see", "app": "Safari", "annotate": true, "path": "/tmp/clawcore-safari-see.png" }
+    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-safari-see.png" }
   ]
 }

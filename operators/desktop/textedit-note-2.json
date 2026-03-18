@@ -1,0 +1,12 @@
+{
+  "name": "textedit-note-2",
+  "steps": [
+    { "kind": "launch-app", "app": "TextEdit" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,n" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "type", "app": "TextEdit", "text": "안녕. 이 문서는 ClawCore desktop operator의 두 번째 검증 시나리오야." },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-textedit-see.png" }
+  ]
+}

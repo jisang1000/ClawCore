@@ -6,6 +6,7 @@ ClawCore에서 macOS UI를 bounded 방식으로 조작하기 위한 Peekaboo 기
 - `launch-app`
 - `open-url`
 - `see`
+- `image`
 - `click`
 - `type`
 - `press`

@@ -34,6 +34,16 @@ function buildArgs(step) {
       if (step.path) args.push('--path', step.path);
       return args;
     }
+    case 'image': {
+      const args = ['image'];
+      if (step.mode) args.push('--mode', step.mode);
+      if (step.app) args.push('--app', step.app);
+      if (step.windowTitle) args.push('--window-title', step.windowTitle);
+      if (step.path) args.push('--path', step.path);
+      if (step.format) args.push('--format', step.format);
+      if (step.retina) args.push('--retina');
+      return args;
+    }
     case 'click': {
       const args = ['click'];
       if (step.on) args.push('--on', step.on);
@@ -57,7 +67,7 @@ function buildArgs(step) {
     case 'hotkey':
       return ['hotkey', '--keys', step.keys];
     case 'sleep':
-      return ['sleep', String(step.seconds || 1)];
+      return ['sleep', String((step.seconds || 1) * 1000)];
     default:
       throw new Error(`Unsupported UI step kind: ${step.kind}`);
   }
