@@ -7,6 +7,19 @@ A guarded autonomous agent core for planning, execution, verification, maintenan
 ClawCore turns user goals into verified outcomes while staying bounded by fixed safety and approval policies.
 It is intentionally designed for **strong autonomy inside clear guardrails**, not unrestricted self-modification.
 
+## What ClawCore Is
+
+ClawCore is a bounded-autonomy runtime for structured task execution.
+
+It is designed to:
+- intake tasks in a structured format
+- plan before long execution
+- enforce approval and policy checks
+- execute safe local work
+- decompose larger tasks into child work
+- verify outcomes before declaring completion
+- learn from repeated failures inside approved boundaries
+
 ## Core Principles
 
 - Plan before long execution
@@ -15,6 +28,14 @@ It is intentionally designed for **strong autonomy inside clear guardrails**, no
 - Learn from repeated failures and corrections
 - Keep safety and approval policy fixed and auditable
 - Allow limited self-improvement only in approved layers
+
+## What It Must Not Do
+
+- expand its own permissions
+- rewrite safety policy autonomously
+- self-replicate
+- perform destructive or external actions without approval
+- claim completion without verification
 
 ## Current Capabilities
 
@@ -31,13 +52,68 @@ It is intentionally designed for **strong autonomy inside clear guardrails**, no
 - lessons, candidate rules, adopted rules, maintenance triage, resolution planning
 - dashboard summaries and structured report metadata (`schemaVersion: 0.2.0`)
 
-## What It Must Not Do
+## Quick Start
 
-- expand its own permissions
-- rewrite safety policy autonomously
-- self-replicate
-- perform destructive or external actions without approval
-- claim completion without verification
+### Requirements
+
+- Node.js with ESM support
+- a local ClawCore workspace checkout
+
+### Install
+
+```bash
+cd ClawCore
+npm install
+```
+
+### Run the main runner
+
+```bash
+npm start
+```
+
+### Run all queued work
+
+```bash
+npm run run-all
+```
+
+### Open the dashboard
+
+```bash
+npm run dashboard
+```
+
+### Run the desktop operator
+
+```bash
+npm run ui-operator -- --plan=operators/desktop/demo-open-safari.json
+```
+
+## Available Commands
+
+From `package.json`:
+
+- `npm start` → `node core/runner.js`
+- `npm run dry-run` → `node core/runner.js --dry-run`
+- `npm run run-all` → `node core/run-all.js`
+- `npm run approve-task` → `node core/approve-task.js`
+- `npm run re-request-approval` → `node core/re-request-approval.js`
+- `npm run adopt-rule` → `node core/adopt-rule.js`
+- `npm run dashboard` → `node core/dashboard.js`
+- `npm run migrate-approvals` → `node core/approval-migrate.js`
+- `npm run ui-operator` → `node core/ui-operator.js`
+
+## Example Task Flow
+
+1. load task
+2. classify + validate schema
+3. orchestrate + plan
+4. evaluate approval/policy
+5. execute task or child tasks
+6. verify outcomes
+7. review and optionally replan
+8. log lesson + write report
 
 ## Runtime Modules
 
@@ -54,30 +130,25 @@ It is intentionally designed for **strong autonomy inside clear guardrails**, no
 - `external-report.js`
 - `report-schema.js`
 
-## Current Runtime Flow
-
-1. load task
-2. classify + validate schema
-3. orchestrate + plan
-4. evaluate approval/policy
-5. execute task or child tasks
-6. verify outcomes
-7. review and optionally replan
-8. log lesson + write report
-
 ## Repository Layout
 
 - `core/` — runtime modules
 - `policy/` — fixed policy layer
-- `memory/` — lessons and self-improving memory
-- `tasks/queue/` — main queued tasks
-- `tasks/generated/` — generated child tasks
-- `tasks/plans/` — generated plans
-- `tasks/reports/` — generated reports, approval state, maintenance outputs
-- `sandbox/` — isolated experimentation area
-- `docs/` — architecture and implementation docs
+- `docs/` — architecture and implementation notes
+- `apps/` — simple local app outputs and demos
+- `operators/` — desktop operator plans and examples
+- `tasks/queue/` — queued tasks and fixture tasks tracked in the repo
+
+The repository intentionally ignores local runtime state such as logs, memory, sandbox outputs, generated task artifacts, and report files.
 
 ## Current Status
 
 ClawCore is now an **operational bounded-autonomy core** rather than only an MVP skeleton.
-Most real operating tasks are completing successfully; the remaining blocked tasks are intentional test fixtures for approval/schema handling.
+Most real operating tasks are completing successfully; the remaining blocked tasks are intentional fixture cases for approval/schema handling and regression coverage.
+
+## Known Limitations
+
+- approval and external-action boundaries are intentionally strict
+- some blocked tasks are preserved on purpose as regression fixtures
+- desktop automation still depends on local OS permissions and environment setup
+- this repository is a bounded local execution core, not an unrestricted autonomous agent
