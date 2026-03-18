@@ -1,0 +1,21 @@
+{
+  "id": "task-001",
+  "goal": "Inspect a tool setup, identify a missing dependency, propose a fix, and verify the final command works.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "root cause is identified",
+    "a fix is proposed or applied safely",
+    "the final command is verified or clearly marked unverified"
+  ],
+  "status": "done",
+  "priority": "medium",
+  "riskLevel": "medium",
+  "retries": 0,
+  "maxRetries": 2,
+  "taskType": "generic-inspect",
+  "nextRetryAt": null,
+  "backoffReason": null
+}

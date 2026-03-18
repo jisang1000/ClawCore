@@ -1,0 +1,26 @@
+{
+  "id": "task-013",
+  "goal": "Check whether sandbox JSON config contains required keys.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "config file exists",
+    "required keys are present",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "config-check",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/config.json",
+  "requiredKeys": [
+    "mode",
+    "version",
+    "initializedBy",
+    "phase"
+  ],
+  "priority": "medium",
+  "riskLevel": "low",
+  "retries": 1,
+  "nextRetryAt": "2026-03-16T00:48:03.443Z"
+}

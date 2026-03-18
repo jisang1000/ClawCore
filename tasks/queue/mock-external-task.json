@@ -1,0 +1,23 @@
+{
+  "id": "task-008",
+  "goal": "Simulate an approved external action without actually sending anything.",
+  "constraints": [
+    "external action requires approval"
+  ],
+  "successCriteria": [
+    "an external action is simulated but not really sent",
+    "a mock execution report is created",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "external-action",
+  "action": "send-message",
+  "target": "mock-external-target",
+  "payload": "Hello from ClawCore mock external action.",
+  "priority": "high",
+  "riskLevel": "high",
+  "approved": true,
+  "mockOnly": true,
+  "retries": 1,
+  "backoffReason": "Retry limit reached."
+}

@@ -1,0 +1,21 @@
+{
+  "id": "task-032",
+  "goal": "Ensure the sandbox YAML config contains a maintainedBy key.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "yaml file exists",
+    "maintainedBy key exists after execution",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "ensure-yaml-key",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/config.yaml",
+  "key": "maintainedBy",
+  "value": "ClawCore",
+  "priority": "medium",
+  "riskLevel": "low"
+}

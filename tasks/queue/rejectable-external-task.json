@@ -1,0 +1,26 @@
+{
+  "id": "task-023",
+  "goal": "Attempt an external action that will be rejected for lifecycle testing.",
+  "constraints": [
+    "external action requires approval"
+  ],
+  "successCriteria": [
+    "task is blocked before approval",
+    "approval can be rejected with reason",
+    "dashboard reflects rejected approval"
+  ],
+  "status": "blocked",
+  "fixture": true,
+  "fixtureCategory": "approval-lifecycle",
+  "taskType": "external-action",
+  "action": "send-message",
+  "target": "rejected-target",
+  "payload": "This should stay blocked.",
+  "mockOnly": true,
+  "priority": "high",
+  "riskLevel": "high",
+  "approved": false,
+  "approvalResolvedAt": "2026-03-16T01:50:24.921Z",
+  "approvalDecisionReason": "audit trail seed",
+  "resumeRequested": false
+}

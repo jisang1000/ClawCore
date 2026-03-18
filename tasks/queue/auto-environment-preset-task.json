@@ -1,0 +1,20 @@
+{
+  "id": "task-015",
+  "goal": "Check the local development environment tools using a preset.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "preset checks are resolved automatically",
+    "all configured checks run",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "retries": 1,
+  "nextRetryAt": null,
+  "backoffReason": "Retry limit reached.",
+  "preset": "dev",
+  "priority": "high",
+  "riskLevel": "low"
+}

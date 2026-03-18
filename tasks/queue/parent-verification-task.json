@@ -1,0 +1,21 @@
+{
+  "id": "task-025",
+  "goal": "Inspect the sandbox project note, propose a safe next step, and verify the final outcome clearly.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "current state is inspected",
+    "a safe next step is proposed",
+    "the final outcome is verified"
+  ],
+  "status": "done",
+  "retries": 1,
+  "nextRetryAt": "2026-03-16T02:19:01.584Z",
+  "backoffReason": null,
+  "taskType": "generic-inspect",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/project-status.md",
+  "priority": "medium",
+  "riskLevel": "medium"
+}

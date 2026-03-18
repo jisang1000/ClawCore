@@ -1,0 +1,18 @@
+{
+  "id": "task-009",
+  "goal": "Create a sandbox markdown note with starter content if it does not already exist.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "markdown file exists after execution",
+    "starter content is written if file was missing",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "ensure-markdown-file",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/notes/hello.md",
+  "content": "# ClawCore Sandbox Note\n\nThis file was created by a safe local fix action.\n"
+}

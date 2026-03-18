@@ -1,0 +1,21 @@
+{
+  "id": "task-018",
+  "goal": "Update the sandbox YAML config with a phase and owner field.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "yaml file exists",
+    "requested yaml keys are present after execution",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/config.yaml",
+  "patch": {
+    "phase": "phase-candidate",
+    "owner": "ClawCore"
+  },
+  "priority": "medium",
+  "riskLevel": "low"
+}

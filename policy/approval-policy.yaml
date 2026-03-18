@@ -1,0 +1,15 @@
+version: 0.1.0
+name: approval-policy
+approvalRequired:
+  - destructive-actions
+  - external-messaging
+  - public-posting
+  - account-credential-use
+  - system-level-configuration
+  - irreversible-operations
+autoAllowed:
+  - read-only-inspection
+  - local-non-destructive-edits
+  - planning
+  - verification
+  - lesson-logging

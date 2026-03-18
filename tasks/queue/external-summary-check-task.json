@@ -1,0 +1,17 @@
+{
+  "id": "task-034",
+  "goal": "Inspect the existing resumable mock external action report and verify that the external summary block is available.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "external summary block is present for an external-action task",
+    "approval status is readable",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "generic-inspect",
+  "priority": "medium",
+  "riskLevel": "low"
+}

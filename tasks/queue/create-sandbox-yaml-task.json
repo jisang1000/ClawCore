@@ -1,0 +1,20 @@
+{
+  "id": "task-011",
+  "goal": "Create a sandbox YAML config file if it does not already exist.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "yaml file exists after execution",
+    "starter content is written if file was missing",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "ensure-yaml-file",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/config.yaml",
+  "content": "mode: sandbox\nversion: 0.1.0\nmanagedBy: ClawCore\n",
+  "priority": "medium",
+  "riskLevel": "low"
+}

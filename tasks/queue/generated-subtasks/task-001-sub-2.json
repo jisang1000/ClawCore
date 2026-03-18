@@ -1,0 +1,17 @@
+{
+  "id": "task-001-sub-2",
+  "parentTaskId": "task-001",
+  "goal": "Propose a safe next step or fix.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "Propose a safe next step or fix."
+  ],
+  "status": "pending",
+  "taskType": "generic-inspect",
+  "subtaskKind": "propose",
+  "priority": "medium",
+  "riskLevel": "medium"
+}

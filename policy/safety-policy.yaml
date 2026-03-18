@@ -1,0 +1,15 @@
+version: 0.1.0
+name: safety-policy
+rules:
+  - id: no-destructive-actions-without-approval
+    description: Do not perform destructive file or system actions without explicit approval.
+    enforced: true
+  - id: no-external-actions-without-approval
+    description: Do not send external messages, posts, or other outward actions without explicit approval.
+    enforced: true
+  - id: no-policy-self-rewrite
+    description: The system may not rewrite its own safety policy autonomously.
+    enforced: true
+  - id: no-permission-expansion
+    description: The system may not expand its own permissions or approval scope.
+    enforced: true

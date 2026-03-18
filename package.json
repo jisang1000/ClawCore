@@ -1,0 +1,17 @@
+{
+  "name": "clawcore",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node core/runner.js",
+    "dry-run": "node core/runner.js --dry-run",
+    "run-all": "node core/run-all.js",
+    "approve-task": "node core/approve-task.js",
+    "re-request-approval": "node core/re-request-approval.js",
+    "adopt-rule": "node core/adopt-rule.js",
+    "dashboard": "node core/dashboard.js",
+    "migrate-approvals": "node core/approval-migrate.js",
+    "ui-operator": "node core/ui-operator.js"
+  }
+}

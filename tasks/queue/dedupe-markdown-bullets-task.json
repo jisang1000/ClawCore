@@ -1,0 +1,20 @@
+{
+  "id": "task-031",
+  "goal": "Remove duplicate recent progress bullets from the sandbox project status note.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "target markdown file exists",
+    "duplicate bullets are removed from the target section",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "dedupe-markdown-bullets",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/project-status.md",
+  "sectionTitle": "Recent Progress",
+  "priority": "medium",
+  "riskLevel": "low"
+}

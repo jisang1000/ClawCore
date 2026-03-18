@@ -1,0 +1,18 @@
+{
+  "id": "task-010",
+  "goal": "Ensure a sandbox output directory exists.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "target directory exists after execution",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "ensure-dir",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/output",
+  "priority": "medium",
+  "riskLevel": "low"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "task-006",
+  "goal": "Attempt an external action to verify approval gating.",
+  "constraints": [
+    "external action requires approval"
+  ],
+  "successCriteria": [
+    "task is blocked before execution without approval"
+  ],
+  "status": "permanent-blocked",
+  "fixture": true,
+  "fixtureCategory": "approval-gating",
+  "taskType": "external-action",
+  "action": "send-message",
+  "target": "example-external-target",
+  "priority": "high",
+  "riskLevel": "high",
+  "approved": true,
+  "retries": 1,
+  "backoffReason": "Retry limit reached.",
+  "nextRetryAt": null
+}

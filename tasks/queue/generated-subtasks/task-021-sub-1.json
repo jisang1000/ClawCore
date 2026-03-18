@@ -1,0 +1,17 @@
+{
+  "id": "task-021-sub-1",
+  "parentTaskId": "task-021",
+  "goal": "Inspect current state and identify constraints.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "Inspect current state and identify constraints."
+  ],
+  "status": "needs_followup",
+  "taskType": "generic-inspect",
+  "subtaskKind": "inspect",
+  "priority": "medium",
+  "riskLevel": "medium"
+}

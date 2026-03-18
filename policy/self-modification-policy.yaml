@@ -1,0 +1,15 @@
+version: 0.1.0
+name: self-modification-policy
+allowed:
+  - update-lesson-memory
+  - update-workflow-templates
+  - store-candidate-rules
+forbidden:
+  - rewrite-safety-policy
+  - rewrite-approval-policy
+  - expand-permissions
+  - autonomous-self-replication
+  - autonomous-long-term-goal-expansion
+notes:
+  - Self-improvement is limited to execution quality and reusable workflow patterns.
+  - Policy changes require explicit human approval.

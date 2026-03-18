@@ -1,0 +1,17 @@
+{
+  "id": "task-002",
+  "goal": "Check whether Node.js is available and verify that the node command runs successfully.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "node executable is found",
+    "node --version returns successfully",
+    "final result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "command-check",
+  "command": "node --version",
+  "binary": "node"
+}

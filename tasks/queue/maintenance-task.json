@@ -1,0 +1,17 @@
+{
+  "id": "task-027",
+  "goal": "Inspect blocked and retrying task state, compact repeated candidate rules, and verify maintenance outputs exist.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "candidate rules are compacted",
+    "blocked triage report is generated",
+    "maintenance output is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "generic-inspect",
+  "priority": "medium",
+  "riskLevel": "low"
+}

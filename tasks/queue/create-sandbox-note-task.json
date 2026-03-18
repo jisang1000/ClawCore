@@ -1,0 +1,17 @@
+{
+  "id": "task-004",
+  "goal": "Create a safe local sandbox note file if it does not already exist.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "sandbox note file exists after execution",
+    "action is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "ensure-file",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/sandbox-note.txt",
+  "content": "ClawCore sandbox note initialized.\n"
+}

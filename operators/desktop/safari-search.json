@@ -1,0 +1,11 @@
+{
+  "name": "safari-search",
+  "steps": [
+    { "kind": "launch-app", "app": "Safari" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,l" },
+    { "kind": "type", "app": "Safari", "text": "https://www.google.com/search?q=clawcore" },
+    { "kind": "press", "app": "Safari", "key": "return" },
+    { "kind": "sleep", "seconds": 2 }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "app-hotkeys",
+  "steps": [
+    { "kind": "launch-app", "app": "Safari" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,t" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,w" }
+  ]
+}

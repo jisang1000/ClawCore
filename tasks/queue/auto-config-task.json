@@ -1,0 +1,20 @@
+{
+  "id": "task-017",
+  "goal": "Check whether the sandbox JSON config has the required phase field.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "task type is recommended automatically",
+    "config validation runs",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/config.json",
+  "requiredKeys": [
+    "phase"
+  ],
+  "priority": "medium",
+  "riskLevel": "low"
+}

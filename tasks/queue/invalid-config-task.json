@@ -1,0 +1,14 @@
+{
+  "id": "task-020",
+  "goal": "Check whether a sandbox JSON config has required keys but omit required schema pieces for testing.",
+  "constraints": [
+    "non-destructive"
+  ],
+  "status": "blocked",
+  "fixture": true,
+  "fixtureCategory": "schema-validation",
+  "taskType": "config-check",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/config.json",
+  "priority": "medium",
+  "riskLevel": "low"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "task-016",
+  "goal": "Update a markdown section in the sandbox project status note.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "target markdown file exists",
+    "the requested section is inserted or updated",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "patch-markdown-section",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/project-status.md",
+  "sectionTitle": "Recent Progress",
+  "sectionContent": "- Added task type auto recommendation.\n- Added environment presets.\n- Added markdown section patching.",
+  "priority": "medium",
+  "riskLevel": "low"
+}

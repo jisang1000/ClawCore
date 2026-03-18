@@ -1,0 +1,17 @@
+{
+  "id": "task-022",
+  "goal": "Check environment using an unsupported preset to validate schema.",
+  "constraints": [
+    "non-destructive"
+  ],
+  "successCriteria": [
+    "schema should catch invalid preset"
+  ],
+  "status": "blocked",
+  "fixture": true,
+  "fixtureCategory": "schema-validation",
+  "taskType": "environment-check",
+  "preset": "nonexistent",
+  "priority": "medium",
+  "riskLevel": "low"
+}

@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.*
+
+# Runtime / local state
+logs/
+memory/
+sandbox/
+
+# Generated reports / task state
+tasks/reports/
+tasks/generated/
+tasks/plans/
+tasks/**/*.log
+operators/**/*.report.json
+
+# Coverage / build
+coverage/
+dist/
+build/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

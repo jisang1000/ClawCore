@@ -1,0 +1,19 @@
+{
+  "id": "task-021",
+  "goal": "Inspect the local setup, propose a safe next step, and verify the final outcome clearly.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "current state is inspected",
+    "a safe next step is proposed",
+    "the outcome is explicitly verified or marked unverified"
+  ],
+  "status": "done",
+  "retries": 1,
+  "nextRetryAt": null,
+  "backoffReason": "Retry limit reached.",
+  "priority": "medium",
+  "riskLevel": "medium"
+}

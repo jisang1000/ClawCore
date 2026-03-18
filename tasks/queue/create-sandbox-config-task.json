@@ -1,0 +1,22 @@
+{
+  "id": "task-007",
+  "goal": "Create a sandbox config file with default JSON content if it does not already exist.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "config file exists after execution",
+    "default JSON content is written if file was missing",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "ensure-json-file",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/config.json",
+  "content": {
+    "mode": "sandbox",
+    "version": "0.1.0",
+    "initializedBy": "ClawCore"
+  }
+}

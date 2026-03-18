@@ -1,0 +1,38 @@
+{
+  "id": "task-014",
+  "goal": "Run a small environment inspection bundle for key local tools.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "all configured checks run",
+    "results are captured",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "retries": 1,
+  "nextRetryAt": null,
+  "backoffReason": "Retry limit reached.",
+  "taskType": "environment-check",
+  "checks": [
+    {
+      "name": "node",
+      "command": "node --version"
+    },
+    {
+      "name": "python3",
+      "command": "python3 --version"
+    },
+    {
+      "name": "git",
+      "command": "git --version"
+    },
+    {
+      "name": "tmux",
+      "command": "tmux -V"
+    }
+  ],
+  "priority": "high",
+  "riskLevel": "low"
+}

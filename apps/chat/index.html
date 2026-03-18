@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClawCore Chat Panel</title>
+  <style>
+    :root {
+      --bg: #0b1020; --panel: rgba(15, 23, 42, 0.92); --panel-2: rgba(30, 41, 59, 0.85);
+      --border: rgba(148, 163, 184, 0.18); --text: #e2e8f0; --muted: #94a3b8; --accent: #60a5fa;
+      --shadow: 0 18px 60px rgba(0,0,0,0.38);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: flex; align-items: flex-start; justify-content: flex-end; padding: 24px; font-family: ui-sans-serif, system-ui, sans-serif; background: radial-gradient(circle at top left, #172554, #020617 60%); color: var(--text); }
+    .panel { width: min(420px, 100%); height: min(88vh, 780px); display: grid; grid-template-rows: auto auto 1fr auto; background: var(--panel); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow); overflow: hidden; }
+    .header { padding: 18px 18px 12px; border-bottom: 1px solid var(--border); }
+    .title-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .title { font-size: 20px; font-weight: 700; margin: 0; }
+    .badge { padding: 6px 10px; border-radius: 999px; font-size: 12px; color: #dbeafe; background: rgba(96,165,250,0.18); border: 1px solid rgba(96,165,250,0.25); }
+    .sub { margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .quick-actions { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 18px; border-bottom: 1px solid var(--border); background: rgba(15,23,42,0.35); }
+    .quick-actions button, .send { border: 1px solid var(--border); background: var(--panel-2); color: var(--text); border-radius: 999px; padding: 9px 12px; font-size: 12px; cursor: pointer; }
+    .messages { padding: 18px; overflow: auto; display: flex; flex-direction: column; gap: 12px; }
+    .msg { max-width: 92%; padding: 12px 14px; border-radius: 18px; line-height: 1.5; font-size: 14px; white-space: pre-wrap; }
+    .msg.user { align-self: flex-end; background: rgba(96,165,250,0.18); border: 1px solid rgba(96,165,250,0.25); }
+    .msg.agent { align-self: flex-start; background: rgba(34,197,94,0.14); border: 1px solid rgba(34,197,94,0.22); }
+    .msg.system { align-self: center; background: rgba(148,163,184,0.08); border: 1px solid rgba(148,163,184,0.18); color: var(--muted); font-size: 12px; }
+    .composer { border-top: 1px solid var(--border); padding: 16px; background: rgba(2,6,23,0.4); }
+    textarea { width: 100%; min-height: 84px; resize: vertical; border-radius: 16px; border: 1px solid var(--border); background: rgba(15,23,42,0.82); color: var(--text); padding: 14px; font: inherit; outline: none; }
+    .composer-row { margin-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .hint { color: var(--muted); font-size: 12px; }
+    .send.primary { background: linear-gradient(135deg, var(--accent), #2563eb); color: white; border: 0; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <div class="header">
+      <div class="title-row"><h1 class="title">ClawCore Chat</h1><span class="badge">MVP</span></div>
+      <div class="sub">간단한 자연어 입력을 미리 정의된 desktop operator 실행으로 연결하는 데스크톱 채팅창 MVP야.</div>
+    </div>
+    <div class="quick-actions">
+      <button data-prompt="사파리 열어줘">사파리 열어줘</button>
+      <button data-prompt="사파리 검색해줘">사파리 검색해줘</button>
+      <button data-prompt="메모 적어줘">메모 적어줘</button>
+      <button data-prompt="단축키 테스트해줘">단축키 테스트해줘</button>
+    </div>
+    <div class="messages" id="messages">
+      <div class="msg system">지금은 미리 연결된 몇 개의 자연어 요청만 실제 desktop operator plan으로 실행돼.</div>
+      <div class="msg agent">예: “사파리 열어줘”, “메모 적어줘”, “단축키 테스트해줘”</div>
+    </div>
+    <div class="composer">
+      <textarea id="input" placeholder="예: 사파리 열어줘"></textarea>
+      <div class="composer-row">
+        <div class="hint">먼저 dry-run으로 연결해두었어. 실제 실행 모드도 나중에 붙일 수 있어.</div>
+        <button class="send primary" id="sendBtn">실행</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const messages = document.getElementById('messages');
+    const input = document.getElementById('input');
+    const sendBtn = document.getElementById('sendBtn');
+
+    function addMessage(role, text) {
+      const div = document.createElement('div');
+      div.className = `msg ${role}`;
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    async function runPrompt(text) {
+      const trimmed = text.trim();
+      if (!trimmed) return;
+      addMessage('user', trimmed);
+      addMessage('system', '실행 중...');
+      input.value = '';
+      try {
+        const res = await fetch('http://127.0.0.1:8002/api/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt: trimmed, dryRun: true })
+        });
+        const data = await res.json();
+        messages.removeChild(messages.lastElementChild);
+        if (!data.matched) {
+          addMessage('agent', `${data.message}\n\n지원 요청: ${data.knownPrompts.join(', ')}`);
+          return;
+        }
+        addMessage('agent', `plan: ${data.plan}\ndry-run: ${data.dryRun}\nreturncode: ${data.returncode}\n\n${data.stdout || data.stderr || '응답 없음'}`);
+      } catch (e) {
+        messages.removeChild(messages.lastElementChild);
+        addMessage('agent', `실행 중 오류: ${e.message}`);
+      }
+    }
+
+    sendBtn.addEventListener('click', () => runPrompt(input.value));
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) runPrompt(input.value);
+    });
+    document.querySelectorAll('[data-prompt]').forEach(btn => btn.addEventListener('click', () => { input.value = btn.dataset.prompt; input.focus(); }));
+  </script>
+</body>
+</html>

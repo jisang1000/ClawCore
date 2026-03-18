@@ -1,0 +1,15 @@
+{
+  "id": "task-003",
+  "goal": "Check whether the Tesla note exists in the active Obsidian vault.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "target file exists",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "file-check",
+  "targetPath": "/Users/leejisang/Documents/Obsidian Vault/테슬라 관련 노트.md"
+}

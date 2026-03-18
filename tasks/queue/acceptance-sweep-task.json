@@ -1,0 +1,17 @@
+{
+  "id": "task-035",
+  "goal": "Inspect current ClawCore operating state, verify documentation and maintenance outputs exist, and confirm the bounded-autonomy acceptance sweep passes.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "README and docs reflect the implemented state",
+    "maintenance outputs exist",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "generic-inspect",
+  "priority": "medium",
+  "riskLevel": "low"
+}

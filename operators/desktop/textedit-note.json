@@ -1,0 +1,10 @@
+{
+  "name": "textedit-note",
+  "steps": [
+    { "kind": "launch-app", "app": "TextEdit" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,n" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "type", "app": "TextEdit", "text": "안녕. 이 문서는 ClawCore desktop operator가 자동으로 입력한 텍스트야." }
+  ]
+}

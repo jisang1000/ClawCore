@@ -1,0 +1,17 @@
+{
+  "id": "task-033",
+  "goal": "Inspect approval lifecycle history and verify that an approval audit summary exists.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "approval audit summary is generated",
+    "approval history remains readable",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "generic-inspect",
+  "priority": "medium",
+  "riskLevel": "low"
+}

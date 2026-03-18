@@ -1,0 +1,17 @@
+{
+  "id": "task-014-sub-2",
+  "parentTaskId": "task-014",
+  "goal": "Run configured environment checks.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "Run configured environment checks."
+  ],
+  "status": "pending",
+  "taskType": "generic-inspect",
+  "subtaskKind": "execute",
+  "priority": "high",
+  "riskLevel": "low"
+}

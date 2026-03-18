@@ -1,0 +1,23 @@
+{
+  "id": "task-019",
+  "goal": "Attempt a resumable mock external action after approval.",
+  "constraints": [
+    "external action requires approval"
+  ],
+  "successCriteria": [
+    "task is blocked before approval",
+    "task resumes after approval",
+    "mock external report is created after approval"
+  ],
+  "status": "done",
+  "taskType": "external-action",
+  "action": "send-message",
+  "target": "resumable-mock-target",
+  "payload": "Hello from resumable approval flow.",
+  "mockOnly": true,
+  "priority": "high",
+  "riskLevel": "high",
+  "approved": true,
+  "approvalResolvedAt": "2026-03-16T01:41:53.195Z",
+  "resumeRequested": false
+}

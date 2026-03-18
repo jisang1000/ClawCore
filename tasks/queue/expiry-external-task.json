@@ -1,0 +1,25 @@
+{
+  "id": "task-024",
+  "goal": "Attempt an external action that will simulate approval expiry.",
+  "constraints": [
+    "external action requires approval"
+  ],
+  "successCriteria": [
+    "task is blocked before approval",
+    "approval request can expire",
+    "dashboard reflects expired approval"
+  ],
+  "status": "blocked",
+  "fixture": true,
+  "fixtureCategory": "approval-lifecycle",
+  "taskType": "external-action",
+  "action": "send-message",
+  "target": "expired-target",
+  "payload": "This should expire before execution.",
+  "mockOnly": true,
+  "priority": "high",
+  "riskLevel": "high",
+  "approved": false,
+  "resumeRequested": false,
+  "approvalDecisionReason": "retry after expiry test"
+}

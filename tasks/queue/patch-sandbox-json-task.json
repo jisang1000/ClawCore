@@ -1,0 +1,22 @@
+{
+  "id": "task-012",
+  "goal": "Patch the sandbox JSON config with one additional field.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "json file still exists",
+    "the requested field is present after execution",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "patch-json",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/config.json",
+  "patch": {
+    "phase": "phase-b"
+  },
+  "priority": "medium",
+  "riskLevel": "low"
+}

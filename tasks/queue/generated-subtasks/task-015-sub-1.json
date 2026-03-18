@@ -1,0 +1,17 @@
+{
+  "id": "task-015-sub-1",
+  "parentTaskId": "task-015",
+  "goal": "Resolve environment preset or checks.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "Resolve environment preset or checks."
+  ],
+  "status": "pending",
+  "taskType": "generic-inspect",
+  "subtaskKind": "inspect",
+  "priority": "high",
+  "riskLevel": "low"
+}

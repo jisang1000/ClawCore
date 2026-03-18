@@ -1,0 +1,21 @@
+{
+  "id": "task-029",
+  "goal": "Ensure the sandbox JSON config contains a maintainedBy key.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "json file exists",
+    "the maintainedBy key exists after execution",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "safe-local-fix",
+  "action": "ensure-json-key",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/sandbox/experiments/config.json",
+  "key": "maintainedBy",
+  "value": "ClawCore",
+  "priority": "medium",
+  "riskLevel": "low"
+}

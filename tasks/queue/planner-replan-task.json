@@ -1,0 +1,16 @@
+{
+  "id": "task-026",
+  "goal": "Inspect the local setup, propose a safe repair, and verify the final outcome clearly after retry if needed.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "inspect phase is present",
+    "propose or repair phase is preserved",
+    "verification remains explicit"
+  ],
+  "status": "done",
+  "priority": "medium",
+  "riskLevel": "medium"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "task-014-sub-3",
+  "parentTaskId": "task-014",
+  "goal": "Verify all checks completed successfully.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "Verify all checks completed successfully."
+  ],
+  "status": "pending",
+  "taskType": "generic-inspect",
+  "subtaskKind": "verify",
+  "priority": "high",
+  "riskLevel": "low"
+}

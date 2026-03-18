@@ -1,0 +1,17 @@
+{
+  "id": "task-021-sub-3",
+  "parentTaskId": "task-021",
+  "goal": "Verify the final outcome explicitly.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "Verify the final outcome explicitly."
+  ],
+  "status": "needs_followup",
+  "taskType": "generic-inspect",
+  "subtaskKind": "verify",
+  "priority": "medium",
+  "riskLevel": "medium"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "task-005",
+  "goal": "Check whether the ClawCore policy directory exists.",
+  "constraints": [
+    "non-destructive",
+    "no external actions without approval"
+  ],
+  "successCriteria": [
+    "policy directory exists",
+    "result is explicitly verified"
+  ],
+  "status": "done",
+  "taskType": "directory-check",
+  "targetPath": "/Users/leejisang/.openclaw/workspace/ClawCore/policy"
+}
