@@ -1,0 +1,10 @@
+{
+  "name": "telegram-capture-focused",
+  "steps": [
+    { "kind": "launch-app", "app": "Telegram" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "focus-window", "app": "Telegram" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-telegram-focused-see.png" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "finder-open-applications",
+  "steps": [
+    { "kind": "switch-app", "app": "Finder" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,shift,a" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-finder-applications-see.png" }
+  ]
+}

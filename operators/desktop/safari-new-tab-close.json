@@ -1,0 +1,12 @@
+{
+  "name": "safari-new-tab-close",
+  "steps": [
+    { "kind": "launch-app", "app": "Safari" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,t" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "hotkey", "keys": "cmd,w" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-safari-tab-see.png" }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "telegram-capture",
+  "steps": [
+    { "kind": "launch-app", "app": "Telegram" },
+    { "kind": "sleep", "seconds": 1 },
+    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-telegram-see.png" }
+  ]
+}

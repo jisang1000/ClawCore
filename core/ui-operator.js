@@ -20,10 +20,41 @@ function runPeekaboo(args, { dryRun = false } = {}) {
   }
 }
 
+function updateMetrics(planName, ok) {
+  const metricsPath = path.resolve(process.cwd(), 'tasks/reports/metrics/ops-summary.json');
+  let metrics = {
+    desktopScenarios: { success: 0, partial: 0, failed: 0, lastUpdated: null },
+    githubOps: { authEnabled: true, reposPushed: 2, lastUpdated: null },
+    publishOps: { success: 1, failed: 2, lastPublishedSlug: 'jisang1000-verification-before-completion', lastUpdated: null },
+    notes: []
+  };
+
+  if (fs.existsSync(metricsPath)) {
+    try {
+      metrics = JSON.parse(fs.readFileSync(metricsPath, 'utf8'));
+    } catch {}
+  }
+
+  if (!metrics.desktopScenarios) {
+    metrics.desktopScenarios = { success: 0, partial: 0, failed: 0, lastUpdated: null };
+  }
+
+  if (ok) metrics.desktopScenarios.success += 1;
+  else metrics.desktopScenarios.failed += 1;
+
+  metrics.desktopScenarios.lastUpdated = new Date().toISOString();
+  metrics.lastScenario = planName;
+
+  fs.mkdirSync(path.dirname(metricsPath), { recursive: true });
+  fs.writeFileSync(metricsPath, JSON.stringify(metrics, null, 2), 'utf8');
+}
+
 function buildArgs(step) {
   switch (step.kind) {
     case 'launch-app':
       return ['app', 'launch', step.app];
+    case 'switch-app':
+      return ['app', 'switch', '--to', step.app];
     case 'open-url':
       return ['open', step.url, '--app', step.app || 'Safari'];
     case 'see': {
@@ -66,6 +97,12 @@ function buildArgs(step) {
     }
     case 'hotkey':
       return ['hotkey', '--keys', step.keys];
+    case 'focus-window': {
+      const args = ['window', 'focus'];
+      if (step.app) args.push('--app', step.app);
+      if (step.windowTitle) args.push('--window-title', step.windowTitle);
+      return args;
+    }
     case 'sleep':
       return ['sleep', String((step.seconds || 1) * 1000)];
     default:
@@ -91,12 +128,17 @@ for (const step of plan.steps || []) {
   if (!result.ok) break;
 }
 
+const ok = results.every((r) => r.result.ok);
 const reportPath = path.join(path.dirname(planPath), `${path.basename(planPath, '.json')}.report.json`);
 fs.writeFileSync(reportPath, JSON.stringify({
   plan: plan.name || path.basename(planPath),
   dryRun,
   results,
-  ok: results.every((r) => r.result.ok)
+  ok
 }, null, 2), 'utf8');
 
-console.log(JSON.stringify({ planPath, reportPath, dryRun, ok: results.every((r) => r.result.ok), steps: results.length }, null, 2));
+if (!dryRun) {
+  updateMetrics(plan.name || path.basename(planPath), ok);
+}
+
+console.log(JSON.stringify({ planPath, reportPath, dryRun, ok, steps: results.length }, null, 2));
