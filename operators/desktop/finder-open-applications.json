@@ -3,8 +3,10 @@
   "steps": [
     { "kind": "switch-app", "app": "Finder" },
     { "kind": "sleep", "seconds": 1 },
+    { "kind": "focus-window", "app": "Finder" },
+    { "kind": "sleep", "seconds": 1 },
     { "kind": "hotkey", "keys": "cmd,shift,a" },
     { "kind": "sleep", "seconds": 1 },
-    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-finder-applications-see.png" }
+    { "kind": "image", "mode": "screen", "path": "/tmp/clawcore-finder-applications-screen.png" }
   ]
 }

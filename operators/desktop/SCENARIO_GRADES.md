@@ -33,12 +33,13 @@ ClawCore desktop operator 시나리오를 신뢰도 기준으로 A/B/C 등급으
 ---
 
 ## B 등급
-- `telegram-capture`
-  - 초기 버전은 다른 앱이 캡처되던 흔들림이 있었음
-  - **대체 표준:** `telegram-capture-focused`
 - `app-hotkeys`
   - 초기 버전은 Safari focus 경고가 있었음
   - **대체 표준:** `app-hotkeys-focused`
+
+### 2026-03-20 안정화 메모
+- `finder-open-applications`, `telegram-capture-focused`, `telegram-search-box-focus`는 `switch-app → focus-window → see(app 지정)` 패턴으로 재보강 후 실제 실행 2회 연속 성공 확인
+- `telegram-capture`도 동일한 안정 패턴으로 재보강해 더 이상 구형 3-step 캡처 플랜을 쓰지 않도록 정리함
 
 ---
 

@@ -3,10 +3,12 @@
   "steps": [
     { "kind": "launch-app", "app": "Telegram" },
     { "kind": "sleep", "seconds": 1 },
+    { "kind": "switch-app", "app": "Telegram" },
+    { "kind": "sleep", "seconds": 1 },
     { "kind": "focus-window", "app": "Telegram" },
     { "kind": "sleep", "seconds": 1 },
     { "kind": "hotkey", "keys": "cmd,f" },
     { "kind": "sleep", "seconds": 1 },
-    { "kind": "see", "annotate": true, "path": "/tmp/clawcore-telegram-search-box-see.png" }
+    { "kind": "see", "app": "Telegram", "annotate": true, "path": "/tmp/clawcore-telegram-search-box-see.png" }
   ]
 }

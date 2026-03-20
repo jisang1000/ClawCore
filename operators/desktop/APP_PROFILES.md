@@ -15,6 +15,7 @@
 ## Finder
 - launch name resolution이 흔들릴 수 있어 `switch-app` fallback 선호
 - focus 관련 전처리는 짧게 유지
+- Finder 계열 캡처는 `see`보다 native `image mode=screen`이 더 보수적으로 안정적일 수 있음
 
 ## 운영 원칙
 - 공통 fallback은 `ui-operator` 기본 로직으로 유지
